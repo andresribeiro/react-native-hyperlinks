@@ -8,9 +8,9 @@ export type HyperlinksProps = TextProps & {
 	autoDetectMentions?: boolean;
 	autoDetectHastags?: boolean;
 	linkify?: linkifyIt.LinkifyIt;
-	onLinkPress?: (link: string) => void;
-	onMentionPress?: (username: string) => void;
-	onHashtagPress?: (tag: string) => void;
+	onLinkPress?: (link: string) => unknown;
+	onMentionPress?: (username: string) => unknown;
+	onHashtagPress?: (tag: string) => unknown;
 };
 
 type Mention = {
