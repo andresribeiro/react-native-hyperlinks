@@ -1,6 +1,6 @@
 {
   "name": "react-native-hyperlinks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple and customizable library to display hyperlinks in React Native",
   "main": "./build/dist/index.js",
   "repository": {
