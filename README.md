@@ -27,7 +27,7 @@ yarn add react-native-hyperlinks linkify-it
 ```tsx
 import React from "react";
 import { Linking } from "react-native";
-import Hyperlinks from "./Hyperlinks";
+import Hyperlinks from "react-native-hyperlinks";
 
 export default function App() {
   function handleOnLinkPress(link: string) {
