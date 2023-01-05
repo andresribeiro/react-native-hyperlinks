@@ -63,7 +63,9 @@ export default function App() {
 | `hyperlinkStyle` | `undefined` | `StyleProp<TextStyle>` | `false`
 | `autoDetectMentions` | `true` | `boolean` | `false`
 | `autoDetectHastags` | `true` | `boolean` | `false`
+| `customHyperlinks` | `undefined` | `CustomHyperlink[]` | `false`
 | `onLinkPress` | `undefined` | `(link: string) => unknown` | `false`
 | `onMentionPress` | `undefined` | `(username: string) => unknown` | `false`
 | `onHashtagPress` | `undefined` | `(tag: string) => unknown` | `false`
+| `onCustomHyperlinkPress` | `undefined` | `(hyperlink: CustomHyperlink) => unknown` | `false`
 | `linkify` | `linkifyIt()` | `linkifyIt.LinkifyIt` | `false`

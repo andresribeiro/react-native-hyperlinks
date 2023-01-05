@@ -2,15 +2,25 @@ import React from "react";
 import { Linking, StyleProp, Text, TextProps, TextStyle } from "react-native";
 import linkifyIt from "linkify-it";
 
+export type CustomHyperlinkData = any;
+
+export type CustomHyperlink = {
+	start: number;
+	end: number;
+	data?: CustomHyperlinkData;
+};
+
 export type HyperlinksProps = TextProps & {
 	text: string;
 	hyperlinkStyle?: StyleProp<TextStyle>;
 	autoDetectMentions?: boolean;
 	autoDetectHastags?: boolean;
+	customHyperlinks?: CustomHyperlink[];
 	linkify?: linkifyIt.LinkifyIt;
 	onLinkPress?: (link: string) => unknown;
 	onMentionPress?: (username: string) => unknown;
 	onHashtagPress?: (tag: string) => unknown;
+	onCustomHyperlinkPress?: (hyperlink: CustomHyperlink) => unknown;
 };
 
 type Mention = {
@@ -36,10 +46,12 @@ export default function Hyperlinks({
 	hyperlinkStyle,
 	autoDetectMentions = true,
 	autoDetectHastags = true,
+	customHyperlinks = [],
 	linkify = linkifyIt(),
 	onLinkPress,
 	onMentionPress,
 	onHashtagPress,
+	onCustomHyperlinkPress,
 	style,
 	...textProps
 }: HyperlinksProps) {
@@ -52,7 +64,8 @@ export default function Hyperlinks({
 	if (
 		matches.length === 0 &&
 		detectedMentions.length === 0 &&
-		hashtags.length === 0
+		hashtags.length === 0 &&
+		customHyperlinks.length === 0
 	) {
 		return (
 			<Text style={style} {...textProps}>
@@ -101,6 +114,14 @@ export default function Hyperlinks({
 			onPress: () => {
 				onHashtagPress?.(hashtag.tag);
 			},
+		});
+	});
+
+	customHyperlinks.forEach((hyperlink) => {
+		allMatches.push({
+			start: hyperlink.start,
+			end: hyperlink.end,
+			onPress: () => onCustomHyperlinkPress?.(hyperlink),
 		});
 	});
 
