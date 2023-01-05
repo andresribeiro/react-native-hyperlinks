@@ -2,7 +2,7 @@
 
 ### Features ✨
 
-- 🛑 Automatic detect for links, mentions and hashtags
+- 🛑 Automatic detection for links, mentions and hashtags
 - 🔤 Full unicode support
 - 🌐 International domains support
 - 💅 Custom hyperlink style
