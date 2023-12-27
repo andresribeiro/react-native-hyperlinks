@@ -14,7 +14,7 @@
 
 ### About 🗞️
 
-Uses [linkify-it](https://github.com/markdown-it/linkify-it) under the hood. Created for my social network app, [Drakkle](https://play.google.com/store/apps/details?id=com.andresribeiro.drakkle)
+Uses [linkify-it](https://github.com/markdown-it/linkify-it) under the hood. Created for my social network app, [Rybun](https://rybun.com)
 
 ### Installation ⚙️
 
