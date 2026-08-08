@@ -14,7 +14,7 @@ export type HyperlinksProps = TextProps & {
 	text: string;
 	hyperlinkStyle?: StyleProp<TextStyle>;
 	autoDetectMentions?: boolean;
-	autoDetectHastags?: boolean;
+	autoDetectHashtags?: boolean;
 	customHyperlinks?: CustomHyperlink[];
 	linkify?: linkifyIt.LinkifyIt;
 	onLinkPress?: (link: string) => unknown;
@@ -45,7 +45,7 @@ export default function Hyperlinks({
 	text,
 	hyperlinkStyle,
 	autoDetectMentions = true,
-	autoDetectHastags = true,
+	autoDetectHashtags = true,
 	customHyperlinks = [],
 	linkify = linkifyIt(),
 	onLinkPress,
@@ -59,7 +59,7 @@ export default function Hyperlinks({
 
 	const detectedMentions = autoDetectMentions ? getMentions(text) : [];
 
-	const hashtags = autoDetectHastags ? getHashtags(text) : [];
+	const hashtags = autoDetectHashtags ? getHashtags(text) : [];
 
 	if (
 		matches.length === 0 &&
