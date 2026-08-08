@@ -62,7 +62,7 @@ export default function App() {
 | `text` | `undefined` | `string` | `true`
 | `hyperlinkStyle` | `undefined` | `StyleProp<TextStyle>` | `false`
 | `autoDetectMentions` | `true` | `boolean` | `false`
-| `autoDetectHastags` | `true` | `boolean` | `false`
+| `autoDetectHashtags` | `true` | `boolean` | `false`
 | `customHyperlinks` | `undefined` | `CustomHyperlink[]` | `false`
 | `onLinkPress` | `undefined` | `(link: string) => unknown` | `false`
 | `onMentionPress` | `undefined` | `(username: string) => unknown` | `false`
